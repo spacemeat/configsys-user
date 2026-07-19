@@ -1,0 +1,82 @@
+{
+    // Shared, git-synced profile definitions. Per-machine selection + overrides live in
+    // ~/configsys.hu, which overlays this file section-by-section (see docs/routing-model.md).
+    configs: [ user, dev, uc-dev, graphics ]
+
+    // Machine-wide default install scope for scope-honoring families (appImage/flatpak/
+    // tarball). `user` matches those families' own defaults — they're user-space by nature
+    // (~/apps, --user, ~/vulkan). A per-component route `scope:` or ~/configsys.hu overrides it.
+    // (Fixed-scope families — apt/dnf/pacman = system, dotfiles/cargo = user — ignore this.)
+    scope: system
+
+    // A profile is a flat list of component names. Each name is resolved through
+    // routes.hu (family binding, recursive deps, dedup). A name with no route on
+    // the active OS is surfaced as a config error. The user file may add profiles or
+    // shadow one of these (per profile name).
+    profiles: {
+        user: [
+            bash-dotfiles
+            btop
+            firefox
+            chrome
+            neovim
+            fastfetch
+            fzf
+            ripgrep
+            xclip
+            mononoki-nerd
+            apod
+            vulkan-runtime      // loader + mesa Vulkan ICDs; no-op where a DE already has them
+            steam
+            best-ps1
+        ]
+        dev: [
+            cargo
+            build-essential
+            // TODO(parked): toolchain routes not yet defined: pyke python12 mesa
+            gcc-13
+            gcc-14
+            gcc-15
+            clang-18
+            clang-19
+            clang-20
+            gdb
+            vscode
+        ]
+        uc-dev: [
+            build-essential
+            arduino
+        ]
+        // vulkan-dev the bundle already carries build-essential + the X-dev libs, so the
+        // profile just names the bundle (renamed from `vulkan-dev` to avoid colliding
+        // with the component of the same name).
+        graphics: [
+            vulkan-dev
+        ]
+    }
+
+    components: {
+        // apod: a PyPI CLI (termapod) installed via pipx, plus a shell-startup dotfile.
+        // `via: pipx` pulls the pipx TOOL (the driver's requires) — which is itself the
+        // version-variant component above (pip-bootstrap on old Ubuntu/Debian, +EPEL on EL),
+        // so this is a two-level tool chain. The inline dotfiles field runs termapod on every
+        // interactive shell. (Old: linux `apod: [ pipx\apod, dotfiles\apod ]`.)
+        apod: {
+            suggests: apod-dotfiles
+            install: [ { via: pipx  name: termapod  version: { pypi: termapod } } ]
+        }
+        apod-dotfiles: {
+            install: [ { via: dotfiles  requires: bash-dotfiles  src: bash.d/apod.sh  dst: ~/.bash.d/apod.sh } ]
+        }
+
+        neovim-dotfiles: {
+            install: [ { via: dotfiles  requires: bash-dotfiles
+                         config:  { src: neovim         dst: $XDG_CONFIG_HOME/nvim }
+                         aliases: { src: bash.d/neovim.sh  dst: ~/.bash.d/neovim.sh } } ]
+        }
+
+        best-ps1: {
+            install: [ { via: dotfiles  requires: bash-dotfiles  src: bash.d/ps1.sh  dst: ~/.bash.d/ps1.sh } ]
+        }
+    }
+}
