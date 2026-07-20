@@ -4,7 +4,7 @@
     // machine settings (configs / scope / pins) apply as this account's portable defaults, with
     // the top config overriding per-machine. Ships no code — just data + dotfiles.
     name: configsys-user
-    version: 0.0.1
+    version: 0.0.2
     requires-abi: 1
 
     data: [ configsys.hu ]
@@ -12,6 +12,6 @@
     // Transitive plugins this personal layer brings along, so a fresh machine bootstraps from a
     // single primary declaration and `configsys plugin sync` pulls the rest.
     plugins: [
-        { source: "github:spacemeat/configsys-blender"  ref: v0.1.0 }
+        { source: "github:spacemeat/configsys-blender"  ref: v0.1.1 }
     ]
 }
