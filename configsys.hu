@@ -1,7 +1,7 @@
 {
     // Shared, git-synced profile definitions. Per-machine selection + overrides live in
     // ~/configsys.hu, which overlays this file section-by-section (see docs/routing-model.md).
-    configs: [ user, gaming, dev, uc-dev, graphics, sculpture-artist ]
+    configs: [ user, gaming, dev, electronics, graphics, sculpture-artist ]
 
     profiles: {
         user: [
@@ -43,6 +43,11 @@
         blender: {
             install: [ { via: blender-build  ref: v4.3.2  dir: blender-git  target: both
                          gpu: [ cuda, optix ]  requires: [ cuda-toolkit ] } ]
+        }
+
+        kicad: {
+            install: [
+                { via: kicad-build  ref: 9.0.0  dir: kicad-git }
         }
     }
 }
