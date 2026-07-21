@@ -9,9 +9,8 @@
 
     data: [ configsys.hu ]
 
-    // Transitive plugins this personal layer brings along, so a fresh machine bootstraps from a
-    // single primary declaration and `configsys plugin sync` pulls the rest.
     plugins: [
         { source: "github:spacemeat/configsys-blender"  ref: v0.1.2 }
+        { source: "github:spacemeat/configsys-kicad" }
     ]
 }
