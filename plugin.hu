@@ -10,7 +10,7 @@
     data: [ configsys.hu ]
 
     plugins: [
-        { source: "github:spacemeat/configsys-blender"  ref: v0.1.3 }
-        { source: "github:spacemeat/configsys-kicad" }
+        { source: "github:spacemeat/configsys-blender"  ref: v0.1.5 }
+        { source: "github:spacemeat/configsys-kicad"  ref: v0.1.2 }
     ]
 }

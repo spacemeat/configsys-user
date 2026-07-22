@@ -27,7 +27,8 @@
             install: [ { via: pipx  name: termapod  version: { pypi: termapod } } ]
         }
         apod-dotfiles: {
-            install: [ { via: dotfiles  requires: bash-dotfiles  src: bash.d/apod.sh  dst: ~/.bash.d/apod.sh } ]
+            install: [ { via: dotfiles  requires: bash-dotfiles
+                         src: bash.d/apod.sh  dst: ~/.bash.d/apod.sh } ]
         }
 
         neovim-dotfiles: {
@@ -37,17 +38,19 @@
         }
 
         best-ps1: {
-            install: [ { via: dotfiles  requires: bash-dotfiles  src: bash.d/ps1.sh  dst: ~/.bash.d/ps1.sh } ]
+            install: [ { via: dotfiles  requires: bash-dotfiles
+                         src: bash.d/ps1.sh  dst: ~/.bash.d/ps1.sh } ]
         }
 
         blender: {
             install: [ { via: blender-build  ref: v4.3.2  dir: blender-git  target: both
-                         gpu: [ cuda, optix ]  requires: [ cuda-toolkit ] } ]
+                         gpu: [ cuda, optix ]  requires: [ cuda-toolkit ]
+                         optix-root: ~/optix/NVIDIA-OptiX-SDK-8.0.0-linux64-x86_64 } ]
         }
 
         kicad: {
             install: [
-                { via: kicad-build  ref: 9.0.0  dir: kicad-git }
+                { via: kicad-build  ref: 9.0.0  dir: kicad-git } ]
         }
     }
 }
