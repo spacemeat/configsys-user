@@ -4,13 +4,12 @@
     // machine settings (configs / scope / pins) apply as this account's portable defaults, with
     // the top config overriding per-machine. Ships no code — just data + dotfiles.
     name: configsys-user
-    version: 0.0.3
     requires-abi: 1
 
     data: [ configsys.hu ]
 
     plugins: [
-        { source: "github:spacemeat/configsys-blender"  ref: v0.1.5 }
-        { source: "github:spacemeat/configsys-kicad"  ref: v0.1.2 }
+        { source: "github:spacemeat/configsys-blender"  ref: v0.1.6 }
+        { source: "github:spacemeat/configsys-kicad"  ref: v0.1.3 }
     ]
 }
