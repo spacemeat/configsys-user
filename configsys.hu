@@ -53,4 +53,5 @@
                 { via: kicad-build  ref: 9.0.0  dir: kicad-git } ]
         }
     }
+    splash: ocean
 }
