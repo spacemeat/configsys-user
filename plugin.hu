@@ -12,6 +12,8 @@
         { source: "github:spacemeat/configsys-blender"  ref: v0.1.6 }
         { source: "github:spacemeat/configsys-kicad"  ref: v0.1.3 }
         { source: "github:spacemeat/configsys-source"  ref: v0.1.0 }
-        { source: "github:spacemeat/configsys-splash-ocean" ref: v0.1.0 }
+        { source: "github:spacemeat/configsys-splash-ocean"  ref: v0.1.0 }
+        { source: "github:spacemeat/configsys-splash-blocks"  ref: v0.1.0 }
+        { source: "github:spacemeat/configsys-opencv"  ref: v0.1.2 }
     ]
 }

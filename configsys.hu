@@ -1,19 +1,21 @@
 {
     // Shared, git-synced profile definitions. Per-machine selection + overrides live in
     // ~/configsys.hu, which overlays this file section-by-section (see docs/routing-model.md).
-    configs: [ user, gaming, dev, electronics, graphics, sculpture-artist ]
+configs: [ user  gaming  dev  electronics  graphics  sculpture-artist  science ]
 
     profiles: {
-        user: [
-            +user
-            apod
-            best-ps1
-        ]
-        sculpture-artist: [
-            +user
-            vulkan-runtime
-            blender
-        ]
+        user: [ +user  apod  best-ps1 ]
+        sculpture-artist: [ +user  vulkan-runtime  blender ]
+        ts-user: []
+        ts-terminal: [ bash-dotfiles  configsys-dotfiles  curl  fastfetch  fzf  git  htop  lazygit  mononoki-nerd  ripgrep  tmux  xclip  yazi ]
+        ts-graphics: [ blender  vulkan-dev  vulkan-runtime  gimp  inkscape  krita ]
+        ts-electronics: [ arduino  gnuradio ]
+        ts-dev-system: [ analysis  cmake  cpp-toolchain  gcc-13  gcc-14  gcc-15  gdb  make  ninja  rust  luarocks  lua  octave  jq  postman  prettier  typescript  sass  websocat  yq  cudnn  cuda-toolkit ]
+        ts-containers: [ docker  docker-group  lazydocker ]
+        ts-audio: [ ardour  lmms  pipewire  tenacity ]
+        ts-desktop-apps: [ discord  libreoffice  vlc ]
+        ts-net-tools: [ dig  ethtool  iftop  iperf3  iproute2  mtr  netcat  nethogs  nload  nmap  socat  tcpdump  traceroute  tshark  vnstat  whois  wireshark  wireshark-group ]
+        ts-virt: [ qemu  libvirt  libvirt-service  virt-manager ]
     }
 
     components: {
@@ -52,6 +54,7 @@
             install: [
                 { via: kicad-build  ref: 9.0.0  dir: kicad-git } ]
         }
+
     }
-    splash: ocean
+    splash: blocks
 }
