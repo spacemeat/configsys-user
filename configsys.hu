@@ -1,21 +1,34 @@
 {
     // Shared, git-synced profile definitions. Per-machine selection + overrides live in
     // ~/configsys.hu, which overlays this file section-by-section (see docs/routing-model.md).
-configs: [ user  gaming  dev  electronics  graphics  sculpture-artist  science ]
+    //configs: [ user  gaming  dev  electronics  graphics  sculpture-artist  science ]
+    configs: [ ts-desktop  ts-laptop ]
 
     profiles: {
-        user: [ +user  apod  best-ps1 ]
-        sculpture-artist: [ +user  vulkan-runtime  blender ]
-        ts-user: []
-        ts-terminal: [ bash-dotfiles  configsys-dotfiles  curl  fastfetch  fzf  git  htop  lazygit  mononoki-nerd  ripgrep  tmux  xclip  yazi ]
-        ts-graphics: [ blender  vulkan-dev  vulkan-runtime  gimp  inkscape  krita ]
-        ts-electronics: [ arduino  gnuradio ]
-        ts-dev-system: [ analysis  cmake  cpp-toolchain  gcc-13  gcc-14  gcc-15  gdb  make  ninja  rust  luarocks  lua  octave  jq  postman  prettier  typescript  sass  websocat  yq  cudnn  cuda-toolkit ]
-        ts-containers: [ docker  docker-group  lazydocker ]
-        ts-audio: [ ardour  lmms  pipewire  tenacity ]
-        ts-desktop-apps: [ discord  libreoffice  vlc ]
-        ts-net-tools: [ dig  ethtool  iftop  iperf3  iproute2  mtr  netcat  nethogs  nload  nmap  socat  tcpdump  traceroute  tshark  vnstat  whois  wireshark  wireshark-group ]
+        ts-dev-system: [ analysis  make  ninja  rust  luarocks  lua  octave  jq  prettier  yq ]
+        ts-dev-cuda: [ cuda  cudnn  cuda-toolkit  cuda-repo  cuda-toolkit-11  cuda-toolkit-12  cudnn-8  cudnn-9 ]
+        ts-dev-c-cpp: [ cmake  cpp-toolchain  gcc-10  gcc-11  gcc-12  gcc-13  gcc-14  gcc-15  gdb  folly  clang-18  clang-19  clang-20  make  meson  ninja  analysis  eastl  boost  bison  flex  abseil  clang-select  clang-tidy  gcc-select  conan  cppcheck  gtkmm  gtk ]
+        ts-dev-rust: [ rust ]
+        ts-dev-lua: []
+        ts-dev-science: [ python  opencv ]
+        ts-dev-vulkan: [ vulkan-dev ]
+        ts-dev-web: [ typescript  node  sass ]
+        ts-user: [ bash-dotfiles  configsys-dotfiles  apod  best-ps1 ]
+        ts-containers: [ docker  docker-group  podman  lazydocker ]
+        ts-net-tools: [ dig  ethtool  iftop  iperf3  iproute2  mtr  netcat  nethogs  nload  nmap  postman  socat  tcpdump  traceroute  tshark  vnstat  websocat  whois  wireshark  wireshark-group ]
+        ts-terminal: [ neovim  curl  fastfetch  fzf  git  htop  lazygit  mononoki-nerd  ripgrep  tmux  xclip  yazi ]
         ts-virt: [ qemu  libvirt  libvirt-service  virt-manager ]
+        ts-desktop-graphics: [ vulkan-runtime  gimp  inkscape  krita  blender ]
+        ts-desktop-electronics: [ arduino  kicad ]
+        ts-desktop-audio: [ ardour  lmms  pipewire  tenacity ]
+        ts-desktop-apps: [ discord  libreoffice  vlc ]
+        ts-laptop-graphics: [ blender  mesa-vulkan-drivers  gimp  inkscape  krita ]
+        ts-laptop-electronics: [ arduino  gnuradio  kicad ]
+        ts-laptop-audio: [ ardour  lmms  pipewire  tenacity ]
+        ts-laptop-apps: [ discord  libreoffice  vlc ]
+        ts-desktop: [ +ts-dev-system  +ts-dev-c-cpp  +ts-dev-vulkan  +ts-dev-web  +ts-user  +ts-containers  +ts-net-tools  +ts-terminal  +ts-virt  +ts-desktop-graphics  +ts-desktop-electronics  +ts-desktop-audio  +ts-desktop-apps ]
+        ts-laptop: [ +ts-dev-system  +ts-dev-c-cpp  +ts-dev-vulkan  +ts-dev-web  +ts-user  +ts-containers  +ts-net-tools  +ts-terminal  +ts-virt  +ts-laptop-graphics  +ts-laptop-electronics  +ts-laptop-audio  +ts-laptop-apps ]
+        graphics: [ +graphics ]
     }
 
     components: {
@@ -44,6 +57,7 @@ configs: [ user  gaming  dev  electronics  graphics  sculpture-artist  science ]
                          src: bash.d/ps1.sh  dst: ~/.bash.d/ps1.sh } ]
         }
 
+        /*
         blender: {
             install: [ { via: blender-build  ref: v4.3.2  dir: blender-git  target: both
                          gpu: [ cuda, optix ]  requires: [ cuda-toolkit ]
@@ -54,7 +68,7 @@ configs: [ user  gaming  dev  electronics  graphics  sculpture-artist  science ]
             install: [
                 { via: kicad-build  ref: 9.0.0  dir: kicad-git } ]
         }
-
+        */
     }
-    splash: blocks
+    splash: random
 }
