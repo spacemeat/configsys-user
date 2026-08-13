@@ -2,33 +2,35 @@
     // Shared, git-synced profile definitions. Per-machine selection + overrides live in
     // ~/configsys.hu, which overlays this file section-by-section (see docs/routing-model.md).
     //configs: [ user  gaming  dev  electronics  graphics  sculpture-artist  science ]
-    configs: [ ts-desktop  ts-laptop ]
+configs: [ ts-desktop  ts-laptop ]
 
     profiles: {
-        ts-dev-system: [ analysis  make  ninja  rust  luarocks  lua  octave  jq  prettier  yq ]
-        ts-dev-cuda: [ cuda  cudnn  cuda-toolkit  cuda-repo  cuda-toolkit-11  cuda-toolkit-12  cudnn-8  cudnn-9 ]
-        ts-dev-c-cpp: [ cmake  cpp-toolchain  gcc-10  gcc-11  gcc-12  gcc-13  gcc-14  gcc-15  gdb  folly  clang-18  clang-19  clang-20  make  meson  ninja  analysis  eastl  boost  bison  flex  abseil  clang-select  clang-tidy  gcc-select  conan  cppcheck  gtkmm  gtk ]
-        ts-dev-rust: [ rust ]
-        ts-dev-lua: []
-        ts-dev-science: [ python  opencv ]
+        ts-dev-system: [ analysis  make  ninja  rust  luarocks  lua  jq  yq  perf  python3.11  python3.12  python3.13  pyenv  python-build-deps  git  cython ]
+        ts-dev-cuda: [ cuda  cudnn  cuda-toolkit  cuda-repo  cuda-toolkit-11  cuda-toolkit-12  cudnn-8  cudnn-9  rocm-hip ]
+        ts-dev-c-cpp: [ cmake  cpp-toolchain  gcc-10  gcc-11  gcc-12  gcc-13  gcc-14  gcc-15  gdb  folly  clang-18  clang-19  clang-20  make  meson  ninja  analysis  eastl  boost  bison  flex  abseil  clang-select  clang-tidy  gcc-select  conan  cppcheck  gtkmm  gtk  heaptrack  pkg-config  fmt  gdb-dotfiles  gflags  glog  double-conversion  fast_float  expat  openssl  libevent  libdwarf  libiberty  liblz4  libmagic  libaio ]
+        ts-dev-rust: [ rust  just ]
+        ts-dev-lua: [ dkjson ]
+        ts-dev-science: [ opencv  octave  opencv-python  fastdds ]
         ts-dev-vulkan: [ vulkan-dev ]
-        ts-dev-web: [ typescript  node  sass ]
+        ts-dev-web: [ typescript  node  sass  prettier  grpcurl ]
+        ts-llm: [ aider  claude-code  codex  ollama  llm ]
         ts-user: [ bash-dotfiles  configsys-dotfiles  apod  best-ps1 ]
-        ts-containers: [ docker  docker-group  podman  lazydocker ]
+        ts-containers: [ docker  docker-group  podman  lazydocker  podman-dotfiles ]
         ts-net-tools: [ dig  ethtool  iftop  iperf3  iproute2  mtr  netcat  nethogs  nload  nmap  postman  socat  tcpdump  traceroute  tshark  vnstat  websocat  whois  wireshark  wireshark-group ]
-        ts-terminal: [ neovim  curl  fastfetch  fzf  git  htop  lazygit  mononoki-nerd  ripgrep  tmux  xclip  yazi ]
+        ts-terminal: [ neovim  curl  fastfetch  fzf  git  htop  lazygit  mononoki-nerd  ripgrep  tmux  xclip  yazi  neovim-dotfiles  lazydocker  lazygit-dotfiles  lazysql  htop-dotfiles  ffmpeg ]
         ts-virt: [ qemu  libvirt  libvirt-service  virt-manager ]
-        ts-desktop-graphics: [ vulkan-runtime  gimp  inkscape  krita  blender ]
-        ts-desktop-electronics: [ arduino  kicad ]
+        ts-desktop-gaming: [ steam  vulkan-runtime ]
+        ts-desktop-graphics: [ vulkan-runtime  gimp  inkscape  krita  blender  freecad ]
+        ts-desktop-electronics: [ arduino  kicad  arduino-dotfiles ]
         ts-desktop-audio: [ ardour  lmms  pipewire  tenacity ]
         ts-desktop-apps: [ discord  libreoffice  vlc ]
         ts-laptop-graphics: [ blender  mesa-vulkan-drivers  gimp  inkscape  krita ]
-        ts-laptop-electronics: [ arduino  gnuradio  kicad ]
+        ts-laptop-electronics: [ arduino  gnuradio  kicad  arduino-dotfiles ]
         ts-laptop-audio: [ ardour  lmms  pipewire  tenacity ]
         ts-laptop-apps: [ discord  libreoffice  vlc ]
-        ts-desktop: [ +ts-dev-system  +ts-dev-c-cpp  +ts-dev-vulkan  +ts-dev-web  +ts-user  +ts-containers  +ts-net-tools  +ts-terminal  +ts-virt  +ts-desktop-graphics  +ts-desktop-electronics  +ts-desktop-audio  +ts-desktop-apps ]
-        ts-laptop: [ +ts-dev-system  +ts-dev-c-cpp  +ts-dev-vulkan  +ts-dev-web  +ts-user  +ts-containers  +ts-net-tools  +ts-terminal  +ts-virt  +ts-laptop-graphics  +ts-laptop-electronics  +ts-laptop-audio  +ts-laptop-apps ]
-        graphics: [ +graphics ]
+
+        ts-desktop: [ +ts-dev-system  +ts-dev-c-cpp  +ts-dev-science  +ts-dev-vulkan  +ts-dev-web  +ts-user  +ts-containers  +ts-net-tools  +ts-terminal  +ts-virt  +ts-desktop-graphics  +ts-desktop-electronics  +ts-desktop-audio  +ts-desktop-apps  python3-pip ]
+        ts-laptop: [ +ts-dev-system  +ts-dev-c-cpp  +ts-dev-science  +ts-dev-vulkan  +ts-dev-web  +ts-user  +ts-containers  +ts-net-tools  +ts-terminal  +ts-virt  +ts-laptop-graphics  +ts-laptop-electronics  +ts-laptop-audio  +ts-laptop-apps  python3-pip ]
     }
 
     components: {
@@ -56,19 +58,6 @@
             install: [ { via: dotfiles  requires: bash-dotfiles
                          src: bash.d/ps1.sh  dst: ~/.bash.d/ps1.sh } ]
         }
-
-        /*
-        blender: {
-            install: [ { via: blender-build  ref: v4.3.2  dir: blender-git  target: both
-                         gpu: [ cuda, optix ]  requires: [ cuda-toolkit ]
-                         optix-root: ~/optix/NVIDIA-OptiX-SDK-8.0.0-linux64-x86_64 } ]
-        }
-
-        kicad: {
-            install: [
-                { via: kicad-build  ref: 9.0.0  dir: kicad-git } ]
-        }
-        */
     }
     splash: random
 }
