@@ -11,10 +11,11 @@
     plugins: [
         { source: "github:spacemeat/configsys-splash-ocean"  ref: v0.1.0 }
         { source: "github:spacemeat/configsys-splash-blocks"  ref: v0.1.0 }
-        { source: "github:spacemeat/configsys-opencv"  ref: v0.1.9 }
+        { source: "github:spacemeat/configsys-opencv"  ref: v0.1.10 }
         { source: "github:spacemeat/configsys-splash-maze"  ref: v0.1.0 }
         { source: "github:spacemeat/configsys-source"  ref: v0.1.6 }
-        { source: "github:spacemeat/configsys-blender"  ref: v0.1.11 }
+        { source: "github:spacemeat/configsys-blender"  ref: v0.1.12 }
         { source: "github:spacemeat/configsys-kicad"  ref: v0.1.8 }
+        { source: "github:spacemeat/configsys-splash-cityscape"  ref: v0.1.0 }
     ]
 }
