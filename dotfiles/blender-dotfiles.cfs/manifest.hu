@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: blender
+            dst: $XDG_CONFIG_HOME/blender
+            exclude: []
+        }
+    }
+}

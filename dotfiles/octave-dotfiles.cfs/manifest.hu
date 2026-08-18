@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: octaverc
+            dst: ~/.octaverc
+            exclude: []
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: bottom
+            dst: $XDG_CONFIG_HOME/bottom
+            exclude: []
+        }
+    }
+}

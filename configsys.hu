@@ -33,13 +33,13 @@
         ts-desktop-audio: [ ardour  lmms  tenacity  spotify ]
         ts-desktop-apps: [ discord  libreoffice  vlc ]
         ts-desktop-dev: [ +ts-dev-tools  +ts-game-dev  +ts-languages  +ts-dev-science  +ts-dev-web  +ts-net-tools ]
-        ts-desktop: [ +ts-user  +ts-terminal  +ts-virtual-machines  +ts-containers  +ts-desktop-gaming  +ts-desktop-graphics  +ts-desktop-electronics  +ts-desktop-audio  +ts-desktop-apps ]
+        ts-desktop: [ +ts-user  +ts-terminal  +ts-virtual-machines  +ts-containers  +ts-desktop-gaming  +ts-desktop-graphics  +ts-desktop-electronics  +ts-desktop-audio  +ts-desktop-apps  +ts-desktop-dev ]
         ts-laptop-graphics: [ blender  mesa-vulkan-drivers  gimp  inkscape  krita ]
         ts-laptop-electronics: [ arduino  gnuradio ]
         ts-laptop-audio: [ ardour  lmms  tenacity  spotify ]
         ts-laptop-apps: [ discord  libreoffice  vlc ]
         ts-laptop-dev: [ +ts-dev-tools  +ts-graphics-dev  +ts-languages  +ts-dev-web  +ts-net-tools ]
-        ts-laptop: [ +ts-user  +ts-terminal  +ts-virtual-machines  +ts-containers  +ts-laptop-graphics  +ts-laptop-electronics  +ts-laptop-audio  +ts-laptop-apps ]
+        ts-laptop: [ +ts-user  +ts-terminal  +ts-virtual-machines  +ts-containers  +ts-laptop-graphics  +ts-laptop-electronics  +ts-laptop-audio  +ts-laptop-apps  +ts-laptop-dev ]
         terminal-emulators: [ +terminal-emulators  ~alacritty ]
     }
 
@@ -55,18 +55,23 @@
         }
         apod-dotfiles: {
             install: [ { via: dotfiles  requires: bash-dotfiles
-                         src: bash.d/apod.sh  dst: ~/.bash.d/apod.sh } ]
+                         // src: bash.d/apod.sh  dst: ~/.bash.d/apod.sh } ]
+                         config:  { src: apod  dst: $XDG_CONFIG_HOME/apod }
+                         aliases: { glue: apod } } ]
         }
 
+        /*
         neovim-dotfiles: {
             install: [ { via: dotfiles  requires: bash-dotfiles
                          config:  { src: neovim         dst: $XDG_CONFIG_HOME/nvim }
                          aliases: { src: bash.d/neovim.sh  dst: ~/.bash.d/neovim.sh } } ]
         }
+        */
 
         best-ps1: {
             install: [ { via: dotfiles  requires: bash-dotfiles
-                         src: bash.d/ps1.sh  dst: ~/.bash.d/ps1.sh } ]
+                         //src: bash.d/ps1.sh  dst: ~/.bash.d/ps1.sh 
+                         glue: ps1 } ]
         }
     }
     splash: random

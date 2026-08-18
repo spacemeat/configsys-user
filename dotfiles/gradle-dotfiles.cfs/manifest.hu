@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: gradle.properties
+            dst: ~/.gradle/gradle.properties
+            exclude: []
+        }
+    }
+}

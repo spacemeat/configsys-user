@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: containers
+            dst: $XDG_CONFIG_HOME/containers
+            exclude: []
+        }
+    }
+}

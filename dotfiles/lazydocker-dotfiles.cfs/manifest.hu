@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: lazydocker
+            dst: $XDG_CONFIG_HOME/lazydocker
+            exclude: []
+        }
+    }
+}

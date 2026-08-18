@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: maven-settings.xml
+            dst: ~/.m2/settings.xml
+            exclude: []
+        }
+    }
+}

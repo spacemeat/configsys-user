@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: fastfetch
+            dst: $XDG_CONFIG_HOME/fastfetch
+            exclude: []
+        }
+    }
+}

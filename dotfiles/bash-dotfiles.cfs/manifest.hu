@@ -1,0 +1,9 @@
+{
+    specs: {
+        aliases: {
+            src: bash_aliases
+            dst: ~/.bash_aliases
+            exclude: []
+        }
+    }
+}

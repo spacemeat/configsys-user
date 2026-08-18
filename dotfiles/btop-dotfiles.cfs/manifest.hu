@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: btop
+            dst: $XDG_CONFIG_HOME/btop
+            exclude: []
+        }
+    }
+}

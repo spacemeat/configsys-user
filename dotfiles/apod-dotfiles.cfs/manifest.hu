@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: apod
+            dst: $XDG_CONFIG_HOME/apod
+            exclude: []
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: ghostty
+            dst: $XDG_CONFIG_HOME/ghostty
+            exclude: []
+        }
+    }
+}

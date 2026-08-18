@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: libreoffice
+            dst: $XDG_CONFIG_HOME/libreoffice
+            exclude: []
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: kitty
+            dst: $XDG_CONFIG_HOME/kitty
+            exclude: []
+        }
+    }
+}

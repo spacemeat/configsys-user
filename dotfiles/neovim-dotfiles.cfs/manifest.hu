@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: neovim
+            dst: $XDG_CONFIG_HOME/nvim
+            exclude: []
+        }
+    }
+}

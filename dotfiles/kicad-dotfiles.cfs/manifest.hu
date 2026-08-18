@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: kicad
+            dst: $XDG_CONFIG_HOME/kicad
+            exclude: []
+        }
+    }
+}

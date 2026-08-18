@@ -1,0 +1,4 @@
+[Bookmarks]
+[Recent]
+/home/schrock/blender/models/Lung/
+/home/schrock/blender/models/SOAK-2025/

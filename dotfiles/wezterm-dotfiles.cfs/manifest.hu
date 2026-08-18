@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: wezterm
+            dst: $XDG_CONFIG_HOME/wezterm
+            exclude: []
+        }
+    }
+}
