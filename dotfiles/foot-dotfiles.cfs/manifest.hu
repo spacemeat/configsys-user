@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: foot
+            dst: $XDG_CONFIG_HOME/foot
+            exclude: []
+        }
+    }
+}

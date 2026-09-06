@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: httpie-config.json
+            dst: $XDG_CONFIG_HOME/httpie/config.json
+            exclude: []
+        }
+    }
+}

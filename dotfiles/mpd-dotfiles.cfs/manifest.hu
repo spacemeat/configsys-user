@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: mpd
+            dst: $XDG_CONFIG_HOME/mpd
+            exclude: []
+        }
+    }
+}

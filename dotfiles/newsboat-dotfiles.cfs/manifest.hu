@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: newsboat
+            dst: $XDG_CONFIG_HOME/newsboat
+            exclude: []
+        }
+    }
+}

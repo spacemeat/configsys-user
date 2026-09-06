@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: hgrc
+            dst: ~/.hgrc
+            exclude: []
+        }
+    }
+}

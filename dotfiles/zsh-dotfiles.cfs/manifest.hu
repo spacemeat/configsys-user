@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: zshrc
+            dst: ~/.zshrc
+            exclude: []
+        }
+    }
+}

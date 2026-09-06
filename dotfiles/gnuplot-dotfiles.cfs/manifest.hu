@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: gnuplot
+            dst: ~/.gnuplot
+            exclude: []
+        }
+    }
+}

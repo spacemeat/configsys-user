@@ -1,0 +1,6 @@
+# from ~/.zshrc (captured by configsys — installer wanted to write this)
+# >>> configsys glue >>>
+setopt local_options null_glob
+for _f in /home/schrock/.config/zsh/conf.d/*.zsh; do source "$_f"; done
+unset _f
+# <<< configsys glue <<<

@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: alacritty
+            dst: $XDG_CONFIG_HOME/alacritty
+            exclude: []
+        }
+    }
+}

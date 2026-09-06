@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: claude-settings.json
+            dst: ~/.claude/settings.json
+            exclude: []
+        }
+    }
+}

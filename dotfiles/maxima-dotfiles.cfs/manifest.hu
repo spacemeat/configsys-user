@@ -1,0 +1,9 @@
+{
+    specs: {
+        config: {
+            src: maxima
+            dst: ~/.maxima
+            exclude: []
+        }
+    }
+}
