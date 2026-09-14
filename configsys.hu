@@ -1,77 +1,4 @@
 {
-    // Shared, git-synced profile definitions. Per-machine selection + overrides live in
-    // ~/configsys.hu, which overlays this file section-by-section (see docs/routing-model.md).
-    configs: [ ts-desktop  ts-laptop  c-cpp-libs  c-cpp-dev-libs ]
-
-    profiles: {
-        ts-finders: [ +finders ]
-        ts-terminal-emulators: [ +terminal-emulators  ~foot  ~wezterm ]
-        ts-terminal-utils: [ +terminal-utils ]
-        ts-system-utils: [ +system-utils ]
-        ts-system-monitors: [ +system-monitors  ~bottom  ~atop  ~bmon  ~s-tui  ~glances  ~wavemon  ~dstat  ~iotop ]
-        ts-disk-usage-utils: [ +disk-usage-utils ]
-        ts-file-browsers: [ +file-browsers  ~eza  ~mc  ~superfile ]
-        ts-desktop-shells: [ +shells ]
-        ts-laptop-shells: [ +shells  ~fish  ~nushell  ~zsh ]
-        ts-configuration-tools: [ +configuration-tools  ~ansible  ~stow ]
-        ts-password-passkey: []
-        ts-fonts: [ +fonts ]
-        ts-text-editors: [ +text-editors  ~android-studio  ~antigravity  ~emacs  ~helix  ~jetbrains-toolbox  ~jrnl  ~micro  ~vscode  ~vscodium  ~zed  ~fresh  ~asciidoc ]
-        ts-communication: [ +communication  ~obs-studio ]
-        ts-desktop-terminal: [ +ts-finders  +ts-terminal-emulators  +ts-terminal-utils  +ts-system-utils  +ts-system-monitors  +ts-disk-usage-utils  +ts-file-browsers  +ts-desktop-shells  +ts-configuration-tools  +ts-password-passkey  +ts-fonts  +ts-text-editors  +ts-communication ]
-        ts-laptop-terminal: [ +ts-finders  +ts-terminal-emulators  +ts-terminal-utils  +ts-system-utils  +ts-system-monitors  +ts-disk-usage-utils  +ts-file-browsers  +ts-laptop-shells  +ts-configuration-tools  +ts-password-passkey  +ts-fonts  +ts-text-editors  +ts-communication ]
-        ts-iso-image-tools: [ +iso-image-tools  ~caligula  balena-etcher ]
-        ts-web-browsers: [ +web-browsers  chrome  ~chromium  firefox  ~brave  ~opera  ~vivaldi  ~edge  tor-browser  ~lynx ]
-        ts-audio-infra: [ +audio-infra  pipewire  jack  wiremix ]
-        ts-desktop-gaming: [ +gaming  ~wine  ~winetricks  ~protonup-qt  ~protontricks ]
-        ts-laptop-gaming: [ +gaming  ~steam  ~wine  ~winetricks  ~protonup-qt  ~protontricks ]
-        ts-games: [ +games ]
-        ts-virtual-machines: [ +virtual-machines  ~virtualbox ]
-        ts-containers: [ +containers  ~xephyr ]
-        ts-db-servers: [ +db-servers  ~postgresql-service  ~mariadb-service  ~mongodb-service  ~mongodb ]
-        ts-db-clients: [ +db-clients  ~pgcli  ~mycli  ~dbeaver  ~mongodb ]
-        ts-net-tools: [ +net-tools  ~croc  ~wormhole  ~ttyd ]
-        ts-desktop-basics: [ +ts-iso-image-tools  +ts-web-browsers  +ts-audio-infra  +ts-desktop-gaming  +ts-games  +ts-virtual-machines  +ts-containers  +ts-db-servers  +ts-db-clients  +ts-net-tools ]
-        ts-laptop-basics: [ +ts-iso-image-tools  +ts-web-browsers  +ts-audio-infra  +ts-laptop-gaming  +ts-games  +ts-virtual-machines  +ts-containers  +ts-db-servers  +ts-db-clients  +ts-net-tools ]
-        ts-languages: [ +languages  ~dotnet-lang  ~objective-c-lang  ~php-lang  +python-lang  ~ruby-lang  ~scratch-lang  ~elm  ~elixir  ~julia  ~r  ~gfortran  ~gnat  ~gnucobol  ~d  ~crystal  ~dart  ~raku  ~v  ~gleam  ~fennel  ~swift  ~racket  ~guile  ~deno  ~detekt ]
-        ts-jvm-tools: [ +jvm-tools  ~mvnd  ~sdkman  ~ant  ~coursier  ~springboot  ~quarkus  ~micronaut  ~visualvm  ~jmc ]
-        ts-jvm-dev: [ +jvm-dev ]
-        ts-dev-tools: [ +dev-tools  ~ghidra  ~just  ~protobuf  ~liquibase  ~jenkins  ~obsidian  ~radare2  ~grex ]
-        ts-autotools: [ +autotools ]
-        ts-version-control-tools: [ +version-control-tools  ~cvs  ~perforce  ~fossil  ~bazaar ]
-        ts-compression-tools: [ +compression-tools ]
-        ts-desktop-compute-lang: [ +compute-lang  ~rocm-hip  ~intel-oneapi-basekit ]
-        ts-desktop-deep-learning-lang: [ +deep-learning-lang  ~cudnn-9  ~miopen  ~onednn ]
-        ts-laptop-compute-lang: []
-        ts-laptop-deep-learning-lang: []
-        ts-ai-tools: [ +ai-tools  ~codex  ~llm  ~aider  ~impala ]
-        ts-web-tools: [ +web-tools  ~nginx ]
-        ts-web-package-managers: [ +web-package-managers  ~pnpm  ~yarn ]
-        ts-web-dev: [ +web-dev ]
-        ts-ui-dev: [ +ui-dev  ~gtk  ~gtk3  ~gtkmm  ~libinput  ~pixman  ~libdecor  ~libx11  ~libxcb  ~xcb-util  ~libxcursor  ~libxft  ~libxi  ~libxinerama  ~libxkbcommon  ~libxrandr  ~libxxf86vm  ncurses  ~pango  qt  ~wayland  ~wayland-protocols  ~wlroots  ~wxpython  ~wxwidgets ]
-        ts-graphics-dev: [ +graphics-dev ]
-        ts-game-dev: [ +game-dev  ~godot  ~godl ]
-        ts-desktop-dev: [ +ts-languages  +ts-jvm-dev  +ts-dev-tools  +ts-autotools  +ts-version-control-tools  +ts-compression-tools  +ts-desktop-compute-lang  +ts-desktop-deep-learning-lang  +ts-ai-tools  +ts-web-tools  +ts-web-package-managers  +ts-graphics-dev  +ts-game-dev ]
-        ts-laptop-dev: [ +ts-languages  +ts-jvm-dev  +ts-dev-tools  +ts-autotools  +ts-version-control-tools  +ts-compression-tools  +ts-laptop-compute-lang  +ts-laptop-deep-learning-lang  +ts-ai-tools  +ts-web-tools  +ts-web-package-managers  +ts-graphics-dev  +ts-game-dev ]
-        ts-desktop-electronics-tools: [ +electronics-tools ]
-        ts-laptop-electronics-tools: [ +electronics-tools  ~kicad ]
-        ts-desktop-graphics-tools: [ +graphics-tools  ~asciiquarium  ~cbonsai  ~durdraw  ~darktable  ~openscad  ~scribus  ~digikam  ~pipes  ~webcamize  ~wl-screenrec ]
-        ts-laptop-graphics-tools: [ +graphics-tools  ~asciiquarium  ~cbonsai  ~durdraw  ~gimp  ~inkscape  ~darktable  ~freecad  ~openscad  ~pipes  ~scribus  ~digikam  ~webcamize  ~wl-screenrec ]
-        ts-audio-tools: [ +audio-tools ]
-        ts-desktop-science: [ +science  ~paraview  ~foldit ]
-        ts-laptop-science: [ +science  ~paraview ]
-        ts-desktop-math: [ +math  ~julia  ~r  ~pari  ~gap  ~gnuplot  ~sagemath  ~texlive-full  ~texlive ]
-        ts-laptop-math: [ +math  ~julia  ~r  ~pari  ~gap  ~gnuplot  ~sagemath  ~texlive-full  ~texlive ]
-        ts-media-servers: [ +media-servers  ~jellyfin-service  ~plex-service  ~emby-service  ~navidrome ]
-        ts-media-players: [ +media-players ]
-        ts-user: [ bash-dotfiles  configsys-dotfiles  apod  best-ps1  git  jmtpfs ]
-        ts-desktop: [ +ts-desktop-terminal  +ts-desktop-basics  +ts-desktop-dev  +ts-desktop-electronics-tools  +ts-desktop-graphics-tools  +ts-audio-tools  +ts-desktop-science  +ts-desktop-math  +ts-media-servers  +ts-media-players  +ts-user  +ts-desktop-video-editors ]
-        ts-laptop: [ +ts-laptop-terminal  +ts-laptop-basics  +ts-laptop-dev  +ts-laptop-electronics-tools  +ts-laptop-graphics-tools  +ts-audio-tools  +ts-laptop-science  +ts-laptop-math  +ts-media-servers  +ts-media-players  +ts-user ]
-        ts-desktop-video-editors: [ +video-editors  ~asciinema  ~flowblade  ~olive  ~openshot  ~shotcut ]
-        ts-desktop-benchmark-tools: [ +benchmark-tools  ~unigine-heaven  ~unigine-superposition  ~unigine-valley  ~wrk  ~phoronix-test-suite ]
-        c-cpp-lang: [ +c-cpp-lang  ~vcpkg ]
-    }
-
     components: {
         // apod: a PyPI CLI (termapod) installed via pipx, plus a shell-startup dotfile.
         // `via: pipx` pulls the pipx TOOL (the driver's requires) — which is itself the
@@ -98,4 +25,9 @@
     splash: random
     adopt-installed: true
     driver-preference: [ native  flatpak  snap  native-pkg-file  appImage  tarball  source  script ]
+    picks: {
+        laptop: [ impala  asio  bzip2  expat  ffmpeg-dev  fuse  libaio  libcurl  libdrm-dev  libdwarf  libevent  libgit2  libiberty  libidn2  liblz4  libmagic  libmtp  libpcap  libsecret  libsodium  libunwind  liburing  libusb  libzstd  ncurses  nng  opencascade  openssl  pipewire-dev  sdl2-image  sdl2-ttf  snappy  sqlite  tinyxml2  unixodbc  zlib  bazelisk  cabal  ccmake  clang  clang-18  clang-19  clang-20  clangd  cmake  cmake-gui  conan  cpp-toolchain  doxygen  gcc-10  gcc-11  gcc-12  gcc-13  gcc-14  gcc-15  gdb  gettext  go  goimports  haskell  heaptrack  hlint  make  meson  ninja  jmtpfs  jack  pipewire  wiremix  ardour  audacity  carla  espeak  hydrogen  lmms  musescore  pulseaudio-utils  qjackctl  sonic-pi  supercollider  tenacity  yabridge  autoconf  automake  bison  flex  libtool  pkg-config  docker  docker-group  lazydocker  podman  xephyr  postgresql-service  redis-service  bluetui  curl  dig  dnspeep  ethtool  gping  iftop  iperf3  iproute2  mtr  netcat  nethogs  nload  nmap  rsync  socat  tcpdump  traceroute  tshark  vnstat  whois  wireshark  wireshark-group  abseil  dbus-dev  double-conversion  eastl  fast_float  fastcdr  fastdds  fmt  folly  foonathan-memory  gflags  glog  protobuf-dev  swig  clojure  leiningen  discord  discordo  slack  lz4  p7zip  rar  unrar  unzip  zip  zstd  cuda  arduino  gnuradio  kicad  blender  chafa  cmatrix  figlet  freecad  gimp  grim  inkscape  krita  lolcat  pastel  pywal16  slurp  swaybg  cudnn-8  gnome  libreoffice  alacritty  apod  balena-etcher  bat  boost  bruno  btop  c-toolchain  cairo  chrome  clang-tidy  claude-code  cppcheck  cuda-toolkit-11  cuda-toolkit-12  cython  docker-engine  docker-service  duf  egl  erlang  fastfetch  fd  ffmpeg  firefox  fish  flatpak  foldingathome  fontconfig  fzf  gfortran  gh  git  git-lfs  glew  glfw  glm  gnupg  gnuplot  godots  gradle  groovy  gst-bad  gst-good  gst-libav  gtk  gtk3  gtkmm  gum  htop  httpie  insomnia  jdk  jdk-21  jq  jupyterlab  kdenlive  kitty  kodi  lazysql  libdecor  libfuse2  libinput  libjpeg  libpng  libstdc++  libvirt  libvirt-clients  libvulkan1  libx11  libxcb  libxcb-cursor-dev  libxcb-xinerama0  libxcb-xinput0  libxcursor  libxext  libxft  libxi  libxinerama  libxkbcommon  libxrandr  libxss  libxtst  libxxf86vm  lldb  lm-sensors  lsblk  ltrace  lua  luarocks  lynx  maven  maxima  mercurial  mesa-vulkan-drivers  mitmproxy  mpc  mpd  nasm  ncdu  newsboat  node  numpy  ocaml  octave  ollama  opam  opencv-python  opengl  openssh-server  pango  patch  perf  perl  pipx  pixman  playerctl  po4a  postman  prettier  pytest  python-build-deps  python3-dev  python3-pip  python3.11  python3.12  python3.13  python3.14  qemu  qt  redis  ripgrep  rust  sass  sbcl  sdl  sfml  software-properties-common  source-highlight  spotify  sqlitebrowser  steam  strace  strawberry  stremio  subversion  tcl  tk  tmux  tor-browser  tree  typescript  unityhub  uv  valgrind  virt-manager  vlc  wayland  wayland-protocols  wl-clipboard  wlroots  wxmaxima  wxpython  wxwidgets  xcb-util  xclip  xsel  yq  zork  zoxide  zsh  alacritty-dotfiles  ant  apod-dotfiles  arduino-dotfiles  bash-dotfiles  bat-dotfiles  bazelisk-dotfiles  best-ps1  blender-dotfiles  bottom-dotfiles  btop-dotfiles  bun  bun-dotfiles  c3  cabal-dotfiles  clang-select  claude-code-dotfiles  configsys-dotfiles  coursier  coursier-dotfiles  cuda-repo  detekt  dkjson  dnspeep-dotfiles  dune  dysk  fastfetch-dotfiles  fd-dotfiles  fff  fish-dotfiles  fish-glue  foot-dotfiles  fzf-dotfiles  gcc-select  gdb-dotfiles  ghostty  ghostty-dotfiles  git-dotfiles  glances-dotfiles  gnuplot-dotfiles  go-dotfiles  gradle-dotfiles  htop-dotfiles  httpie-dotfiles  jbang  jmc  jmeter  jq-dotfiles  jreleaser  just  kicad-dotfiles  kitty-dotfiles  kotlin  kotlin-dotfiles  lazydocker-dotfiles  lazygit  lazygit-dotfiles  lazysql-dotfiles  libreoffice-dotfiles  libvirt-service  luarocks-dotfiles  maven-dotfiles  maxima-dotfiles  mercurial-dotfiles  micronaut  miniforge  miniforge-dotfiles  mononoki-nerd  mpd-dotfiles  mpd-mpris  mvnd  neovim  neovim-dotfiles  newsboat-dotfiles  nim  nim-dotfiles  node-dotfiles  nushell  nushell-dotfiles  octave-dotfiles  odin  odin-dotfiles  opam-dotfiles  opencv  pipx-dotfiles  podman-dotfiles  pyenv  pyenv-dotfiles  python3-pip-dotfiles  quarkus  quicklisp  rar-dotfiles  ripgrep-dotfiles  roc  rust-dotfiles  sbt  scala  scalacli  sdkman  sdkman-dotfiles  sesh  sesh-dotfiles  springboot  television  television-dotfiles  tmux-dotfiles  tree-sitter-cli  tree-sitter-cli-dotfiles  unityhub-dotfiles  uv-dotfiles  valgrind-dotfiles  visualvm  vulkan-sdk  vulkan-sdk-dotfiles  websocat  websocat-dotfiles  wezterm-dotfiles  xclip-dotfiles  xh  xh-dotfiles  xpilot  yazi  yazi-dotfiles  zig  zig-dotfiles  zoxide-dotfiles  zsh-dotfiles  zsh-glue  vulkan-dev  flutter  nginx  wine  libavcodec-extra  gst-ugly  vulkan-runtime  ruby  bundler ]
+        desktop: [ asio  bzip2  expat  ffmpeg-dev  fuse  libaio  libcurl  libdrm-dev  libdwarf  libevent  libgit2  libiberty  libidn2  liblz4  libmagic  libmtp  libpcap  libsecret  libsodium  libunwind  liburing  libusb  libzstd  ncurses  nng  opencascade  openssl  pipewire-dev  sdl2-image  sdl2-ttf  snappy  sqlite  tinyxml2  unixodbc  zlib  bazelisk  cabal  ccmake  clang  clang-18  clang-19  clang-20  clangd  cmake  cmake-gui  conan  cpp-toolchain  doxygen  gcc-10  gcc-11  gcc-12  gcc-13  gcc-14  gcc-15  gdb  gettext  go  goimports  haskell  heaptrack  hlint  make  meson  ninja  jmtpfs  impala  jack  pipewire  wiremix  ardour  audacity  carla  espeak  hydrogen  lmms  musescore  pulseaudio-utils  qjackctl  sonic-pi  supercollider  tenacity  yabridge  autoconf  automake  bison  flex  libtool  pkg-config  bluetui  curl  dig  dnspeep  docker-group  ethtool  gping  docker  lazydocker  podman  xephyr  postgresql-service  redis-service  iftop  iperf3  iproute2  mtr  netcat  nethogs  nload  nmap  rsync  socat  tcpdump  traceroute  tshark  vnstat  whois  wireshark  wireshark-group  abseil  dbus-dev  double-conversion  eastl  fast_float  fastcdr  fastdds  fmt  folly  foonathan-memory  gflags  glog  protobuf-dev  swig  clojure  leiningen  discord  discordo  slack  lz4  p7zip  rar  unrar  unzip  zip  zstd  cuda  arduino  gnuradio  kicad  blender  chafa  cmatrix  figlet  freecad  gimp  grim  inkscape  krita  lolcat  pastel  pywal16  slurp  swaybg  cudnn-8  gnome  libreoffice  alacritty  apod  balena-etcher  bat  boost  bruno  btop  c-toolchain  cairo  chrome  clang-tidy  claude-code  cppcheck  cuda-toolkit-11  cuda-toolkit-12  cython  docker-engine  docker-service  duf  egl  erlang  fastfetch  fd  ffmpeg  firefox  fish  flatpak  foldingathome  fontconfig  fzf  gfortran  gh  git  git-lfs  glew  glfw  glm  gnupg  gnuplot  godots  gradle  groovy  gst-bad  gst-good  gst-libav  gtk  gtk3  gtkmm  gum  htop  httpie  insomnia  jdk  jdk-21  jq  jupyterlab  kdenlive  kitty  kodi  lazysql  libdecor  libfuse2  libinput  libjpeg  libpng  libstdc++  libvirt  libvirt-clients  libvulkan1  libx11  libxcb  libxcb-cursor-dev  libxcb-xinerama0  libxcb-xinput0  libxcursor  libxext  libxft  libxi  libxinerama  libxkbcommon  libxrandr  libxss  libxtst  libxxf86vm  lldb  lm-sensors  lsblk  ltrace  lua  luarocks  lynx  maven  maxima  mercurial  mesa-vulkan-drivers  mitmproxy  mpc  mpd  nasm  ncdu  newsboat  node  numpy  nvtop  ocaml  octave  ollama  opam  opencv-python  opengl  openssh-server  pango  patch  perf  perl  pipx  pixman  playerctl  po4a  postman  prettier  pytest  python-build-deps  python3-dev  python3-pip  python3.11  python3.12  python3.13  python3.14  qemu  qt  redis  ripgrep  rust  sass  sbcl  sdl  sfml  software-properties-common  source-highlight  spotify  sqlitebrowser  steam  strace  strawberry  stremio  subversion  tcl  tk  tmux  tor-browser  tree  typescript  unityhub  uv  valgrind  virt-manager  vlc  wayland  wayland-protocols  wl-clipboard  wlroots  wxmaxima  wxpython  wxwidgets  xcb-util  xclip  xsel  yq  zork  zoxide  zsh  alacritty-dotfiles  ant  apod-dotfiles  arduino-dotfiles  bash-dotfiles  bat-dotfiles  bazelisk-dotfiles  best-ps1  blender-dotfiles  bottom-dotfiles  btop-dotfiles  bun  bun-dotfiles  c3  cabal-dotfiles  clang-select  claude-code-dotfiles  configsys-dotfiles  coursier  coursier-dotfiles  cuda-repo  detekt  dkjson  dnspeep-dotfiles  dune  dysk  fastfetch-dotfiles  fd-dotfiles  fff  fish-dotfiles  fish-glue  foot-dotfiles  fzf-dotfiles  gcc-select  gdb-dotfiles  ghostty  ghostty-dotfiles  git-dotfiles  glances-dotfiles  gnuplot-dotfiles  go-dotfiles  gradle-dotfiles  htop-dotfiles  httpie-dotfiles  jbang  jmc  jmeter  jq-dotfiles  jreleaser  just  kicad-dotfiles  kitty-dotfiles  kotlin  kotlin-dotfiles  lazydocker-dotfiles  lazygit  lazygit-dotfiles  lazysql-dotfiles  libreoffice-dotfiles  libvirt-service  luarocks-dotfiles  maven-dotfiles  maxima-dotfiles  mercurial-dotfiles  micronaut  miniforge  miniforge-dotfiles  mononoki-nerd  mpd-dotfiles  mpd-mpris  mvnd  neovim  neovim-dotfiles  newsboat-dotfiles  nim  nim-dotfiles  node-dotfiles  nushell  nushell-dotfiles  octave-dotfiles  odin  odin-dotfiles  opam-dotfiles  opencv  pipx-dotfiles  podman-dotfiles  pyenv  pyenv-dotfiles  python3-pip-dotfiles  quarkus  quicklisp  rar-dotfiles  ripgrep-dotfiles  roc  rust-dotfiles  sbt  scala  scalacli  sdkman  sdkman-dotfiles  sesh  sesh-dotfiles  springboot  television  television-dotfiles  tmux-dotfiles  tree-sitter-cli  tree-sitter-cli-dotfiles  unityhub-dotfiles  uv-dotfiles  valgrind-dotfiles  visualvm  vulkan-sdk  vulkan-sdk-dotfiles  websocat  websocat-dotfiles  wezterm-dotfiles  xclip-dotfiles  xh  xh-dotfiles  xpilot  yazi  yazi-dotfiles  zig  zig-dotfiles  zoxide-dotfiles  zsh-dotfiles  zsh-glue  vulkan-dev  flutter  nginx  wine  gst-ugly  libavcodec-extra  vulkan-runtime  ruby  bundler ]
+        homelab: [ jellyfin-service  vaultwarden ]
+    }
 }
