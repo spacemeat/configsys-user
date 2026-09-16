@@ -1,0 +1,31 @@
+if [ $PYTHONPATH ]; then
+    export PYTHONPATH=.:$PYTHONPATH
+else
+    export PYTHONPATH=.
+fi
+
+# Source configsys's shell glue in lexical order (bash sorts glob expansion), so a snippet can
+# order itself with an NN- prefix — 00-configsys.sh runs first and exports the CONFIGSYS_*_DIR
+# layout vars, which later snippets can then use. Managed glue links into ~/.config/bash/conf.d.
+# Gate on -r (readable), NOT -x (executable): a snippet must load whether or not its file carries
+# the exec bit — a recapture/relink can drop it, and a glue that then silently stops sourcing (e.g.
+# ps1.sh) drops you onto a stale prompt (that's the "always-green exit status" regression).
+if [ -d ~/.config/bash/conf.d ]; then
+    for shfile in ~/.config/bash/conf.d/*.sh; do
+        [ -r "$shfile" ] && . "$shfile"
+    done
+    unset shfile
+fi
+
+alias x="xdg-open"
+
+# --- TEMPORARY: orphan scripts pending their own repos -------------------------------------
+# ps1.sh (a custom PS1 prompt) and apod.sh (`termapod` on shell start) are personal mini-projects
+# that live here FOR NOW. They are NOT dotfiles/glue — they're applications without a repo/version
+# scheme yet; when they get real homes they move out of here (and this whole block goes). Sourced
+# from the synced primary-plugin dotfiles dir; guarded so a machine without the plugin just skips.
+_cfsu_orphans=~/.config/configsys/plugins/configsys-user/dotfiles/bash.d
+for _f in "$_cfsu_orphans"/ps1.sh "$_cfsu_orphans"/apod.sh; do
+    [ -r "$_f" ] && . "$_f"
+done
+unset _f _cfsu_orphans
