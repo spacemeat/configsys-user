@@ -1,9 +1,0 @@
-{
-    specs: {
-        best-ps1: {
-            src: bash.d/ps1.sh
-            dst: ~/.bash.d/ps1.sh
-            exclude: []
-        }
-    }
-}
