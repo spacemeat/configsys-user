@@ -1,9 +1,0 @@
-{
-    specs: {
-        config: {
-            src: nushell
-            dst: $XDG_CONFIG_HOME/nushell
-            exclude: []
-        }
-    }
-}

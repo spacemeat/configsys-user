@@ -1,9 +1,0 @@
-{
-    specs: {
-        config: {
-            src: fish
-            dst: $XDG_CONFIG_HOME/fish
-            exclude: []
-        }
-    }
-}
