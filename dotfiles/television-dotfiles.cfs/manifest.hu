@@ -1,8 +1,8 @@
 {
     specs: {
         config: {
-            src: apod
-            dst: $XDG_CONFIG_HOME/apod
+            src: television
+            dst: $XDG_CONFIG_HOME/television
             exclude: []
         }
     }
