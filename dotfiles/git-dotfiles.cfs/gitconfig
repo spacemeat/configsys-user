@@ -8,3 +8,14 @@
 	required = true
 [init]
 	defaultBranch = main
+[core]
+    editor = nvim
+    pager = delta
+[interactive]
+    diffilter = delta --color-only
+[diff]
+    algorithm = histogram
+[rerere]
+    enabled = true
+    autoupdate = true
+
