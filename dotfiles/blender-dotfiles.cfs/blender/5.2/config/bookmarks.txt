@@ -1,0 +1,4 @@
+[Bookmarks]
+[Recent]
+/home/schrock/src/alveolus/
+/home/schrock/blender/models/Lung/
