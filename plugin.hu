@@ -1,7 +1,7 @@
 {
     // configsys-user — spacemeat's personal configsys layer (profiles, components, dotfiles).
     // Designated `primary: true` in the machine's top ~/.config/configsys/configsys.hu, so its
-    // machine settings (configs / scope / pins) apply as this account's portable defaults, with
+    // machine settings (picks / scope / pins) apply as this account's portable defaults, with
     // the top config overriding per-machine. Ships no code — just data + dotfiles.
     name: configsys-user
     requires-abi: 1
